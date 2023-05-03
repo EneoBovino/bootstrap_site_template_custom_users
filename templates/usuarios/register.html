@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'partials/_header.html' %}
+
+<main id='main'>
+    <!-- ======= Login Section ======= -->
+    <section id="register" class="contact">
+    
+        <div class="container" data-aos="fade-up">
+    
+          <header class="section-header">
+            <p>Registre-se</p>
+          </header>
+    
+          <div class="row gy-4">
+    
+            <div class="col-lg-6 mx-auto">
+              <form action={% url 'register' %} method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row gy-4 php-email-form">
+                {% for field in form.visible_fields %}
+                  <div class="col-md-12">
+                    {{ field }}
+                    <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {% include 'usuarios/partials/_field_error.html' %}
+                  </div>
+                {% endfor %}
+                  <div class="col-md-12 text-center">
+                    <button type="submit">Registrar</button>
+                  </div>
+    
+                </div>
+              </form>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+      </section><!-- End Login Section -->
+</main>
+
+  {% endblock content %}

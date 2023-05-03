@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+  
+{% include 'partials/_header.html' %}
+
+  <!-- ======= Hero Section ======= -->
+  {% include 'index/partials/_hero.html' %}
+  <!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    {% include 'index/partials/_about.html' %}
+    <!-- End About Section -->
+
+    <!-- ======= Values Section ======= -->
+    {% include 'index/partials/_values.html' %}
+    <!-- End Values Section -->
+
+    <!-- ======= Counts Section ======= -->
+    {% include 'index/partials/_counts.html' %}
+    <!-- End Counts Section -->
+
+    <!-- ======= Features Section ======= -->
+    {% include 'index/partials/_features.html' %}
+    <!-- End Features Section -->
+
+    <!-- ======= Services Section ======= -->
+    {% include 'index/partials/_services.html' %}
+    <!-- End Services Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    {% include 'index/partials/_pricing.html' %}
+    <!-- End Pricing Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    {% include 'index/partials/_faq.html' %}
+    <!-- End F.A.Q Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    {% include 'index/partials/_portfolio.html' %}
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    {% include 'index/partials/_testimonials.html' %}
+    <!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+    {% include 'index/partials/_team.html' %}
+    <!-- End Team Section -->
+
+    <!-- ======= Clients Section ======= -->
+    {% include 'index/partials/_clients.html' %}
+    <!-- End Clients Section -->
+
+    <!-- ======= Recent Blog Posts Section ======= -->
+    {% include 'index/partials/_recent_blog_posts.html' %}
+    <!-- End Recent Blog Posts Section -->
+
+    <!-- ======= Contact Section ======= -->
+    {% comment %} {% include 'index/partials/_contact.html' %} {% endcomment %}
+    <!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {% include 'partials/_footer.html' %}
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+{% endblock content %}

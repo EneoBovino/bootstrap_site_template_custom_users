@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'partials/_header.html' %}
+
+<main id="main">
+
+    <!-- ======= Login Section ======= -->
+    <section id="contact" class="contact">
+
+        <div class="container" data-aos="fade-up">
+  
+          <header class="section-header">
+            <h2>Login</h2>
+            <p>Acesse sua conta</p>
+          </header>
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-6 mx-auto">
+              <form action={% url 'login' %} method="post">
+                {% csrf_token %}
+                <div class="row gy-4 php-email-form">
+                    {% for field in form.visible_fields %}
+                        <div class="col-md-12">
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+  
+                  <div class="col-md-12 text-center">
+                    <button type="submit">Registrar</button>
+                  </div>
+  
+                </div>
+              </form>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- End Contact Section -->
+
+</main>
+
+{% endblock content %}
