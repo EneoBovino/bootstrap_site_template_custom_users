@@ -48,15 +48,15 @@ def register(request):
 def login(request):
     form = LoginForm()
 
-    print(request)
+    # print(request)
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
             username = form['username'].value()
             password = form['password'].value()
 
-            print("USUARIO", username)
-            print("SENHA", password)
+            # print("USUARIO", username)
+            # print("SENHA", password)
 
             user = auth.authenticate(
                 request,
@@ -64,7 +64,7 @@ def login(request):
                 password=password
             )
 
-            print(user)
+            # print(user)
 
             if user is not None:
                 auth.login(request, user)
@@ -72,6 +72,6 @@ def login(request):
                 return redirect('index')
             messages.error(request, "usuário/senha estão incorretos ou usuário não existe!")
             return redirect('login')
-    print("GET")
+    # print("GET")
     return render(request, 'usuarios/login.html', {"form":form})
     # return render(request, 'usuarios/login.html')
